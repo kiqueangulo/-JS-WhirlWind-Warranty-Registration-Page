@@ -51,3 +51,21 @@ function makeBttn(params) {
     element.setAttribute('value', params);
     document.body.appendChild(element);
 }
+
+function loadCSS() {
+    let link = document.createElement('link');
+
+    link.href = './style.css';
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+
+    link.onload = function() {
+        console.log('success');
+    }
+
+    link.onerror = function() {
+        console.log('error');
+    }
+
+    document.head.appendChild(link);
+}
